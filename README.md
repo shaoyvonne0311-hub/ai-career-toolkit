@@ -4,6 +4,12 @@ A set of five [Claude Code](https://claude.com/claude-code) "skills" — reusabl
 
 I built this while job-hunting to solve a specific problem I kept running into: **by the time I sat down to write a resume bullet or a behavioral-interview answer, I'd already forgotten the exact numbers.** These skills push the "capture the detail" step to the moment the work actually happens, so the material is already quantified and organized by the time it's needed.
 
+## Demo
+
+![Terminal walkthrough of career-impact-tracker, resume-tailor, and maang-interview-prep running in sequence, using a fabricated example company and job posting](./docs/demo.gif)
+
+*A scripted walkthrough with fabricated example data (no real company/personal info) showing three of the five skills run back-to-back: banking a quantified win, tailoring a resume bullet against a JD, then generating an interview-prep package — each step reusing what the last one produced.*
+
 ## Why this design
 
 Most AI resume/interview tools are single-shot: paste a resume, get a rewrite, done. That throws away the highest-value input — specific, real, quantified detail about what you actually did — because there's nowhere for it to accumulate over time. This toolkit is built as a **pipeline instead of a single tool**, so each stage feeds the next:
