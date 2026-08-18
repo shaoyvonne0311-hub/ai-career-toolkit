@@ -1,6 +1,10 @@
 # AI Career Toolkit
 
-A set of five [Claude Code](https://claude.com/claude-code) "skills" — reusable, instruction-driven agent workflows — that automate the repetitive parts of a job search: tracking quantified wins, drafting networking outreach, tailoring a resume to a JD, building an interview prep package, and closing the loop after each interview.
+[English](./README.md) | [简体中文](./README.zh-CN.md)
+
+A set of five reusable, instruction-driven AI agent workflows that automate the repetitive parts of a job search: tracking quantified wins, drafting networking outreach, tailoring a resume to a JD, building an interview prep package, and closing the loop after each interview.
+
+Each workflow is a single plain-text markdown file (a `SKILL.md`) — no code, no dependencies. They're written in the [Claude Code](https://claude.com/claude-code) "skill" format, which drops in and auto-triggers on trigger phrases with zero setup, but the content itself is just a structured prompt: **it works with any AI assistant** you can paste text into (ChatGPT, Gemini, Codex CLI, or Claude — see [Using this with other AI tools](#using-this-with-other-ai-tools)).
 
 I built this while job-hunting to solve a specific problem I kept running into: **by the time I sat down to write a resume bullet or a behavioral-interview answer, I'd already forgotten the exact numbers.** These skills push the "capture the detail" step to the moment the work actually happens, so the material is already quantified and organized by the time it's needed.
 
@@ -62,11 +66,20 @@ Every skill enforces the same rule: **never invent a metric, quote, or outcome.*
 
 4. **Start with `career-impact-tracker`.** Run it weekly to build a bank of quantified accomplishments before you need them — this is what makes `resume-tailor` and `maang-interview-prep` produce sharp, specific output later instead of generic filler.
 
+## Using this with other AI tools
+
+The `.claude/skills/` drop-in path above is specifically for Claude Code / Claude Desktop, where a skill auto-triggers when you say something like "record this week's work" — no copy-pasting needed. If you use a different AI assistant, two options:
+
+- **Your tool has its own custom-instructions / agent-skills mechanism** (several coding agents now support something similar — check your tool's docs for a name like "custom instructions," "project instructions," or "skills folder"). If so, the `SKILL.md` files here are plain markdown with no Claude-specific syntax — drop them in the same way.
+- **Your tool doesn't, or you're using a plain chat interface** (ChatGPT, Gemini, Codex CLI's chat mode, etc.) — this always works: open the `SKILL.md` file for the skill you want, copy its full contents, and paste it as your first message in a new conversation. Then follow up with your resume/JD/JD-and-company as the skill file asks for. The instructions are self-contained; nothing in them assumes Claude specifically.
+
+Either way, the actual value — the methodology, the "never fabricate a number" rule, the file formats — is identical. The only thing that changes is whether triggering it is automatic or a one-time paste.
+
 ## Notes
 
 - All five skills ask you to paste your resume/JD directly rather than search for a file — there's no assumption of a canonical resume file living in your notes.
 - `resume-tailor` mentions an optional final step for rendering a polished docx/PDF from the tailored content — that part is inherently personal (it encodes your exact resume layout: font, section order, page-fit rules) and isn't included here; the skill file explains how to build your own.
-- These are plain-text instruction files (`SKILL.md`), not code — no dependencies, nothing to install beyond having Claude Code or Claude Desktop.
+- These are plain-text instruction files (`SKILL.md`), not code — no dependencies, nothing to install. They work out of the box with Claude Code/Desktop and can be pasted into any other AI assistant (see above).
 
 ## License
 
